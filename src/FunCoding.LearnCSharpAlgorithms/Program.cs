@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Snippets
+namespace FunCoding.LearnCSharpAlgorithms
 {
     public class Program
     {
