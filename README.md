@@ -1,9 +1,11 @@
-# learn-csharp-algorithms
+# Learn C# Algorithms
 
-- **Quick Start**
+This is an interactive project to help beginners learn basic algorithms by C#.
 
-## Example 1
+## Setup
 
-```csharp --source-file ./src/FunCoding.LearnCSharpAlgorithms/Program.cs --project ./src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj --region run1
-```
+## Getting Started
 
+## Contents
+
+## Thanks
