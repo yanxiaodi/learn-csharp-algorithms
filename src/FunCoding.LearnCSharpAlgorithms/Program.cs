@@ -2,62 +2,36 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using FunCoding.LearnCSharpAlgorithms.Warmup;
 
 namespace FunCoding.LearnCSharpAlgorithms
 {
     public class Program
     {
-        static void Main(
+        static int Main(
             string region = null,
             string session = null,
             string package = null,
             string project = null,
             string[] args = null)
-        {    
-#region Main
-            switch (region)
+        {
+            #region Main
+
+            return region switch
             {
-                case "run":
-                    Run();
-                    break;
-                case "run1":
-                    Run1();
-                    break;
-                case "run2":
-                    Run2();
-                    break;
-                case "run3":
-                    Run3();
-                    break;
-            }
-        }
-#endregion
+                "calculate-sum-naive" => new CalculateSum().CalculateSumNaive(),
+                "calculate-sum-by-gauss" => new CalculateSum().CalculateSumByGauss(),
+                _ => MissingTag(region),
+            };
 
-        public static void Run()
-        {
-            #region run
-            Console.WriteLine("Hello World!");
             #endregion
         }
 
-        public static void Run1()
+        private static int MissingTag(string tag, bool region = true)
         {
-            #region run1
-            Console.WriteLine(DateTime.Now);
-            #endregion
+            Console.WriteLine($"No code snippet configured for {(region ? "region" : "session")}: {tag}");
+            return 1;
         }
 
-        public static void Run2()
-        {
-            #region run2
-            Console.WriteLine(Guid.NewGuid());
-            #endregion
-        }
-        
-        public static void Run3()
-        {
-            #region run3
-            #endregion
-        }
     }
 }
