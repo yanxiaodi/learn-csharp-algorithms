@@ -23,6 +23,11 @@ namespace FunCoding.LearnCSharpAlgorithms
                 "calculate-sum-by-gauss" => new CalculateSum().CallCalculateSumByGauss(),
                 "max-pairwise-product-naive" => new MaxPairwiseProduct().CallMaxPairwiseProductNaive(),
                 "max-pairwise-product-fast" => new MaxPairwiseProduct().CallMaxPairwiseProductFast(),
+                "calculate-fibonacci-naive" => new FibonacciNumber().CallCalculateFibonacciNaive(),
+                "calculate-fibonacci-note" => new FibonacciNumber().CallCalculateFibonacciNote(),
+                "calculate-fibonacci-array" => new FibonacciNumber().CallCalculateFibonacciArray(),
+                "calculate-fibonacci-without-array" => new FibonacciNumber().CallCalculateFibonacciWithoutArray(),
+
                 _ => MissingTag(region),
             };
 
