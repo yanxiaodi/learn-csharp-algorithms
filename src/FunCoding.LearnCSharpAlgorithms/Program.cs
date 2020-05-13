@@ -19,8 +19,8 @@ namespace FunCoding.LearnCSharpAlgorithms
 
             return region switch
             {
-                "calculate-sum-naive" => new CalculateSum().CalculateSumNaive(),
-                "calculate-sum-by-gauss" => new CalculateSum().CalculateSumByGauss(),
+                "calculate-sum-naive" => new CalculateSum().CallCalculateSumNaive(),
+                "calculate-sum-by-gauss" => new CalculateSum().CallCalculateSumByGauss(),
                 _ => MissingTag(region),
             };
 

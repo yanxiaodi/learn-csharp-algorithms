@@ -8,4 +8,8 @@ This is an interactive project to help beginners learn basic algorithms by C#.
 
 ## Contents
 
+### Warmup
+
+* [Why Data Structure and Algorithms Matter](./docs/warmup/why-data-structures-and-algorithms-matter.md)
+
 ## Thanks
