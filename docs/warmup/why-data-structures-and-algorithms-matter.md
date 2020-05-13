@@ -88,3 +88,6 @@ Now we can see the differences between the two data structure for storing a seri
 Also, we know that for one question, there may be multiple solutions but the algorithm we choose can seriously affect the speed of our program.
 
 That is why we need to consider the proper data structure and algorithms in our programs. In the next chapters, we will learn how to analyze the time complexity of competing data structure and algorithms so we can find the proper ways to solve the problems. Analyzing the number of steps that an operation takes is the one of the key things when we understand the program performance.
+
+
+[Return to README](../../README.md)

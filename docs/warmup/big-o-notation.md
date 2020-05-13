@@ -18,7 +18,7 @@ Algorithm 2:
 
 ```
 
-For algorithm 1, it makes a loop, which will takes N steps. For algorithm 2, it takes one step. Obviously, there are some other operations like assignments, but it doesn't matter. So we can say, the time complexity of algorithm 1 is **O(N)**, for algorithm 2, it is **O(1)**. You would see the second algorithm is much faster than the first one.
+For algorithm 1, it makes a loop, which will take N steps. For algorithm 2, it takes one step. Obviously, there are some other operations like assignments, but it doesn't matter. So we can say, the time complexity of algorithm 1 is **O(N)**, for algorithm 2, it is **O(1)**. You would see the second algorithm is much faster than the first one.
 
 Let us see another example.
 
@@ -52,7 +52,7 @@ This algorithm is better because we only have two iterations, which has 1000 + 1
 
 ## Is O(2N) equal to O(N)?
 
-So we could say, the complexity of the first algorithm is **O(N<sup>2</sup>)** and for the second one, it is **O(2N)**. But actually, we only need to consider the highest exponent. To prove this, let us say we have these algorithms: algorithm A is O(2N<sup>2</sup>), algorithm B is O(3N+1), algorithm C is O(2N<sup>2</sup>+3N+1). I got this example from this book: https://book.douban.com/subject/6424904/. Let us see the below table:
+The complexity of the first algorithm is **O(N<sup>2</sup>)** and for the second one, it is **O(2N)**. But actually, we only need to consider the highest exponent. To prove this, let us say we have these algorithms: algorithm A is O(2N<sup>2</sup>), algorithm B is O(3N+1), algorithm C is O(2N<sup>2</sup>+3N+1). I got this example from this book: https://book.douban.com/subject/6424904/. Let us see the below table:
 
 | Times     | Algorithm A(O(2N<sup>2</sup>)) | Algorithm B(O(3N+1)) | Algorithm C(O(2N<sup>2</sup>+3N+1)) |
 | --------- | ------------------------------ | -------------------- | ----------------------------------- |
@@ -66,7 +66,7 @@ So we could say, the complexity of the first algorithm is **O(N<sup>2</sup>)** a
 | n=100000  | 20000000000                    | 300001               | 20000300001                         |
 | n=1000000 | 2000000000000                  | 3000001              | 2000003000001                       |
 
-So we can see the constants can be ignored. So for O(2N), actually we can say it has the same time complexity with O(N).
+So we can see the constants can be ignored as N grows. For O(2N), actually it has the same time complexity with O(N).
 
 ## Best-case and Worst-case
 
@@ -82,3 +82,4 @@ Here is a comparison of some time complexities:
 
 >  O(1) < O(logN) < O(N) < O(NlogN) < O(N<sup>2</sup>) < O(N<sup>3</sup>) < O(2<sup>N</sup>) < O(N!) < O(N<sup>N</sup>)
 
+[Return to README](../../README.md)

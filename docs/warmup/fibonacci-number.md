@@ -19,8 +19,11 @@ For more about it: [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_nu
 Our goal is to implement an efficient algorithm for computing Fibonacci Numbers.
 
 > Task. Given an integer 𝑛, find the 𝑛th Fibonacci number 𝐹<sub>𝑛</sub>.
+> 
 > Input Format. The input consists of a single integer 𝑛.
+> 
 > Constraints. 0 ≤ 𝑛 ≤ 45.
+> 
 > Output Format. Output 𝐹<sub>𝑛</sub>  
 
 If you have learned the basic program concepts, you may know *recursion*, which is a program technique to perform its task by delegating part of it to another instance of itself. I could not remember if my teacher showed us this example when I learned computer science in university. But it is helpful to understand recursion.
@@ -69,7 +72,7 @@ Here is another fast algorithm by creating an array:
 
 ```
 
-The time complexity of this algorithm is also O(N). It is much better. But actually, we do not need to create the array because we only need the last number. So we can continue to improve it by remove the array:
+The time complexity of this algorithm is also O(N). It is much better. But actually, we do not need to create the array because we only need the last number. So we can continue to improve it by removing the array:
 
 ``` cs --region calculate-fibonacci-without-array --source-file ../../src/FunCoding.LearnCSharpAlgorithms/Warmup/FibonacciNumber.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
 
@@ -80,3 +83,5 @@ This improvement does not change the time complexity but it indeed reduces the s
 ## Wrapping up
 
 From this example, I hope we can learn how we improve the algorithms step by step. Keep in mind that there might be multiple algorithms to solve the same problem. Our goal is to find out the proper one that fits current scenario.
+
+[Return to README](../../README.md)
