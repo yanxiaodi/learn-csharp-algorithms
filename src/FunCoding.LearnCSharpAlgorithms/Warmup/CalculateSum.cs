@@ -61,7 +61,7 @@ namespace FunCoding.LearnCSharpAlgorithms.Warmup
             {
                 throw new ArgumentException($"{nameof(n)} should not be less than 1.", nameof(n));
             }
-            // Use long type for the numbers
+            // Use long type for the numbers in case of the integer overflow
             long temp = n;
             long sum = (1 + temp) * temp / 2;
             return sum;

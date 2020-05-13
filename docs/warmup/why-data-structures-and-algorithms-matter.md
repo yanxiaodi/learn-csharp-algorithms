@@ -68,13 +68,13 @@ Now let us talk about the algorithm. An algorithm is a particular process for so
 We can easily write code like this (I added a stopwatch to record the time):
 
 ``` cs --region calculate-sum-naive --source-file ../../src/FunCoding.LearnCSharpAlgorithms/Warmup/CalculateSum.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
-
 ```
+
+> You can click the button to run the code.
 
 The above code is a simple and stable program. The computer can quickly compute the result. But is it fast enough? Not really. You may know there is another solution for this question by the famous mathematician - Gauss. Here is his solution:
 
 ``` cs --region calculate-sum-by-gauss --source-file ../../src/FunCoding.LearnCSharpAlgorithms/Warmup/CalculateSum.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
-
 ```
 
 If we want to calculate the sum of 1 to 10000000, the first algorithm needs 10000000 steps. But the second one only takes one step!

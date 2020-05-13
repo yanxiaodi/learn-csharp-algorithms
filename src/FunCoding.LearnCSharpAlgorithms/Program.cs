@@ -21,6 +21,8 @@ namespace FunCoding.LearnCSharpAlgorithms
             {
                 "calculate-sum-naive" => new CalculateSum().CallCalculateSumNaive(),
                 "calculate-sum-by-gauss" => new CalculateSum().CallCalculateSumByGauss(),
+                "max-pairwise-product-naive" => new MaxPairwiseProduct().CallMaxPairwiseProductNaive(),
+                "max-pairwise-product-fast" => new MaxPairwiseProduct().CallMaxPairwiseProductFast(),
                 _ => MissingTag(region),
             };
 
