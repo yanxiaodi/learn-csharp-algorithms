@@ -27,6 +27,9 @@ namespace FunCoding.LearnCSharpAlgorithms
                 "calculate-fibonacci-note" => new FibonacciNumber().CallCalculateFibonacciNote(),
                 "calculate-fibonacci-array" => new FibonacciNumber().CallCalculateFibonacciArray(),
                 "calculate-fibonacci-without-array" => new FibonacciNumber().CallCalculateFibonacciWithoutArray(),
+                "calculate-gcd-naive" => new GreatestCommonDivisor().CallCalculateGreatestCommonDivisorNaive(),
+                "calculate-gcd-euclidean" => new GreatestCommonDivisor().CallCalculateGreatestCommonDivisorEuclidean(),
+
 
                 _ => MissingTag(region),
             };

@@ -84,4 +84,23 @@ This improvement does not change the time complexity but it indeed reduces the s
 
 From this example, I hope we can learn how we improve the algorithms step by step. Keep in mind that there might be multiple algorithms to solve the same problem. Our goal is to find out the proper one that fits current scenario.
 
+Here is a practice:
+
+> Your goal in this problem is to find the last digit of 𝑛-th Fibonacci number. Recall that Fibonacci numbers grow exponentially fast. For example,
+>
+> F<sub>200</sub> = 280 571 172 992 510 140 037 611 932 413 038 677 189 525
+>
+> Task. Given an integer 𝑛, find the last digit of the 𝑛th Fibonacci number 𝐹<sub>𝑛</sub> (that is, 𝐹<sub>𝑛</sub> mod 10).
+> Input Format. The input consists of a single integer 𝑛.
+> Constraints. 0 ≤ 𝑛 ≤ 107.
+> Output Format. Output the last digit of 𝐹<sub>𝑛</sub>
+>
+> Sample 1: Input: 3. Output: 2. Because F<sub>3</sub> = 2.
+>
+> Sample 2: Input: 331. Output: 9. Because F<sub>331</sub> = 668 996 615 388 005 031 531 000 081 241 745 415 306 766 517 246 774 551 964 595 292 186 469. 
+>
+> Sample 3: Input: 327305. Output: 5. Sorry I do not know what F<sub>327305</sub> is.
+>
+> Because the number grows rapidly, we should be aware of the integer type in C#. The best way is to only store the last digit for each number.
+
 [Return to README](../../README.md)
