@@ -47,7 +47,7 @@ Here is the basic bubble sort algorithm:
 
 ## Time complexity of Bubble Sort
 
-Let us check the efficiency of Bubble Sort. Looking back the previous section, we have 5 elements in the array. In the first passthrough, there are 4 comparisons. In the second passthrough, there are 3 comparisons. So we would say that for N elements, there are (N-1) + (N-2) + (N-3) + 1 comparisons. We also need to swap the items. For the worst scenarios, we always need to swap them. So the swap steps should be the same with comparisons. Assume that we have 5 elements, we need 10 steps for comparisons and 10 steps for swapping. Let us see the below table:
+Let us check the efficiency of Bubble Sort. Looking back the previous section, we have 5 elements in the array. In the first passthrough, there are 4 comparisons. In the second passthrough, there are 3 comparisons. So we would say that for N elements, there are (N-1) + (N-2) + (N-3) ... + 1 comparisons. We also need to swap the items. For the worst scenarios, we always need to swap them. So the swap steps should be the same with comparisons. Assume that we have 5 elements, we need 10 steps for comparisons and 10 steps for swapping. Let us see the below table:
 
 | N                 | Steps             | N<sup>2</sup>     |
 | ------------------| ------------------| ------------------|
