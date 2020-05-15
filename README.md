@@ -23,6 +23,10 @@ Prerequisite: Install [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/
 * [Fibonacci Number](docs/warmup/fibonacci-number.md)
 * [Greatest Common Divisor](docs/warmup/greatest-common-divisors.md)
 
+### Sorting
+
+* [Bubble Sort](docs/sorting/bubble-sort.md)
+
 ## Thanks
 
 * [dotnet try](https://github.com/dotnet/try)

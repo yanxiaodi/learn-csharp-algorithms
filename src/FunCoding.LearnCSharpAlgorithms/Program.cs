@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using FunCoding.LearnCSharpAlgorithms.Sorting;
 using FunCoding.LearnCSharpAlgorithms.Warmup;
 
 namespace FunCoding.LearnCSharpAlgorithms
@@ -19,6 +20,7 @@ namespace FunCoding.LearnCSharpAlgorithms
 
             return region switch
             {
+                // warm up
                 "calculate-sum-naive" => new CalculateSum().CallCalculateSumNaive(),
                 "calculate-sum-by-gauss" => new CalculateSum().CallCalculateSumByGauss(),
                 "max-pairwise-product-naive" => new MaxPairwiseProduct().CallMaxPairwiseProductNaive(),
@@ -31,6 +33,10 @@ namespace FunCoding.LearnCSharpAlgorithms
                 "calculate-gcd-naive" => new GreatestCommonDivisor().CallCalculateGreatestCommonDivisorNaive(),
                 "calculate-gcd-euclidean" => new GreatestCommonDivisor().CallCalculateGreatestCommonDivisorEuclidean(),
                 "calculate-gcd-practice" => new GreatestCommonDivisor().CallCalculateLeastCommonMultiple(),
+                
+                // sorting
+                "bubble-sort" => new BubbleSorter().CallBubbleSort(),
+                "bubble-sort-descending" => new BubbleSorter().CallBubbleSortDescending(),
 
                 _ => MissingTag(region),
             };
