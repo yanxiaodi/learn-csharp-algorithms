@@ -65,5 +65,23 @@ namespace FunCoding.LearnCSharpAlgorithms.Warmup
             return CalculateGreatestCommonDivisorEuclidean(min, temp);
         }
         #endregion
+
+        #region calculate-gcd-practice
+
+        public int CallCalculateLeastCommonMultiple()
+        {
+            var a = 3918848L;
+            var b = 1653264L;
+            var result = CalculateLeastCommonMultiple(a, b);
+            Console.WriteLine($"The Least Common Multiple of {a} and {b} is {result}");
+            return 0;
+        }
+        public long CalculateLeastCommonMultiple(long a, long b)
+        {
+            // You could implement your algorithm here
+            return 0;
+        }
+
+        #endregion
     }
 }

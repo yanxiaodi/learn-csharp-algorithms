@@ -148,5 +148,20 @@ namespace FunCoding.LearnCSharpAlgorithms.Warmup
         }
         #endregion
 
+        #region calculate-fibonacci-practice
+
+        public int CallCalculateFibonacciPractice()
+        {
+            // You could change the below n
+            int n = 35;
+            Console.WriteLine(CalculateFibonacciWithoutArray(n));
+            return 0;
+        }
+        public int CalculateFibonacciPractice(int n)
+        {
+            // You could implement your algorithm here
+            return 0;
+        }
+        #endregion
     }
 }

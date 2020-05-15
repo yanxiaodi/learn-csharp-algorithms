@@ -18,6 +18,8 @@ Efficient algorithm for computing the greatest common divisor is an important ba
 > Sample 2. Input: 28851538 1183019. Output: 17657
 > 28851538 = 17657 * 1634, 1183019 = 17657 * 67
 
+## Exhaustive search
+
 For this question, we can easily assume that d is between 1 and a+b. So we can make an iteration from 1 to a+b, and test each number if it can divide both a and b. The method is like this:
 
 ``` cs --region calculate-gcd-naive --source-file ../../src/FunCoding.LearnCSharpAlgorithms/Warmup/GreatestCommonDivisor.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
@@ -25,6 +27,8 @@ For this question, we can easily assume that d is between 1 and a+b. So we can m
 ```
 
 It works, but it is very slow when we calculate it for two big numbers. Because it needs a+b steps. It is not acceptable when we have two huge numbers.
+
+## Euclidean Algorithm
 
 To solve it efficiently, we can use the Euclidean Algorithm, which is an efficient method for computing the [greatest common divisor](https://en.wikipedia.org/wiki/Greatest_common_divisor) (GCD) of two integers (numbers). FYI: https://en.wikipedia.org/wiki/Euclidean_algorithm. Basically, the lemma of it is:
 
@@ -38,5 +42,21 @@ So we can write a recursion program like this:
 
 You would find this algorithm is much faster. Each step reduces the size of numbers by about a factor of 2. So it takes about log(ab) steps. If we use this algorithm for two 100 digits numbers, it takes about 600 steps.  
 
-This example is somehow related to the math. I just want to show you the correct algorithm is much better but we need to know something about the problem. 
+## Wrapping up
 
+This example is somehow related to the math. I just want to show you the correct algorithm is much better but we need to know something about the problem.
+
+Here is a practice:
+
+> The least common multiple of two positive integers 𝑎 and 𝑏 is the least positive
+> integer 𝑚 that is divisible by both 𝑎 and 𝑏. 
+>
+> Given two integers a and b. How can you find the least common multiple of a and b?
+>
+> Try to edit the below code!
+
+``` cs --region calculate-gcd-practice --source-file ../../src/FunCoding.LearnCSharpAlgorithms/Warmup/GreatestCommonDivisor.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
+
+```
+
+[Return to README](../../README.md)
