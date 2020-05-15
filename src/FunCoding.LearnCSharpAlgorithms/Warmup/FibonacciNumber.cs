@@ -154,7 +154,7 @@ namespace FunCoding.LearnCSharpAlgorithms.Warmup
         {
             // You could change the below n
             int n = 35;
-            Console.WriteLine(CalculateFibonacciWithoutArray(n));
+            Console.WriteLine(CalculateFibonacciPractice(n));
             return 0;
         }
         public int CalculateFibonacciPractice(int n)

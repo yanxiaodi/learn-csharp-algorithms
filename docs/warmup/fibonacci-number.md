@@ -103,4 +103,8 @@ Here is a practice:
 >
 > Because the number grows rapidly, we should be aware of the integer type in C#. The best way is to only store the last digit for each number.
 
+``` cs --region calculate-fibonacci-practice --source-file ../../src/FunCoding.LearnCSharpAlgorithms/Warmup/FibonacciNumber.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
+
+```
+
 [Return to README](../../README.md)
