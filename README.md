@@ -27,6 +27,7 @@ Prerequisite: Install [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/
 
 * [Bubble Sort](docs/sorting/bubble-sort.md)
 * [Selection Sort](docs/sorting/selection-sort.md)
+* [Insertion Sort](docs/sorting/insertion-sort.md)
 
 ## Thanks
 

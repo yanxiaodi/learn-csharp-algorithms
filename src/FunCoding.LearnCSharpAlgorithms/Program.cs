@@ -39,7 +39,8 @@ namespace FunCoding.LearnCSharpAlgorithms
                 "bubble-sort-descending" => new BubbleSorter().CallBubbleSortDescending(),
                 "selection-sort" => new SelectionSorter().CallSelectionSort(),
                 "selection-sort-descending" => new SelectionSorter().CallSelectionSortDescending(),
-
+                "insertion-sort" => new InsertionSorter().CallInsertionSort(),
+                "insertion-sort-descending" => new InsertionSorter().CallInsertionSortDescending(),
                 _ => MissingTag(region),
             };
 

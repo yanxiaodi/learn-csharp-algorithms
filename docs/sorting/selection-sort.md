@@ -27,6 +27,10 @@ Next start passthrough 2:
 
 Repeat until we got the final result.
 
+Here is an animation of Selection Sort:
+
+![Selection Sort Gif – Algorithms](assets/Selection-Sort-Gif.gif)
+
 ## Selection Sort Implementation
 
 Here is the implementation of Selection Sort:

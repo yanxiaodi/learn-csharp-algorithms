@@ -72,14 +72,14 @@ So we can see the constants can be ignored as N grows. For O(2N), actually it ha
 
 Even for a same algorithm, we may get various result when we run it multiple times. For example, if we want to search an element in an array, we need to use an iteration to search it one by one. If the element is at the first position of the array, we only need one step, which is O(1). But if it is at the last position, obviously we need N steps, which is O(N). So O(1) is the best-case scenario, but O(N) is the worst-case scenario. However, in the real life, we use Big O Notation to refer the worst-case scenario unless specified otherwise. Because we are not so lucky to always have the best-case scenario so it is kind of pessimistic approach. If we are ready for the worst-case scenario, we could be easily handle all the situations.
 
-
-
 ## Wrapping up
 
 The best time complexity is O(1). We also know some other time complexities such as O(N) and O(N<sup>2</sup>). We may meet some others like O(logN), O(2<sup>N</sup>), etc. When we write our code, we should only use some of them, such as O(1), O(N), O(logN), etc. For O(N<sup>3</sup>) or O(N!) or O(2<sup>N</sup>), we should never use them because they would be the nightmares if N is a big number - the computer may not complete the calculation until several hundred years pass!
 
 Here is a comparison of some time complexities:
 
->  O(1) < O(logN) < O(N) < O(NlogN) < O(N<sup>2</sup>) < O(N<sup>3</sup>) < O(2<sup>N</sup>) < O(N!) < O(N<sup>N</sup>)
+> O(1) < O(logN) < O(N) < O(NlogN) < O(N<sup>2</sup>) < O(N<sup>3</sup>) < O(2<sup>N</sup>) < O(N!) < O(N<sup>N</sup>)
+
+For more about Big O Notation: https://en.wikipedia.org/wiki/Big_O_notation
 
 [Return to README](../../README.md)

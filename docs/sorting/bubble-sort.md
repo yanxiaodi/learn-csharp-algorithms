@@ -37,11 +37,21 @@ Next passthrough 3...
 
 Finally, we will get a sorted array: [1, 2, 3, 4, 5].
 
+Here is an animation of Bubble Sort:
+
+![img](assets/Bubble-sort-example-300px.gif)
+
 ## Bubble Sort Implementation
 
 Here is the basic bubble sort algorithm:
 
 ``` cs --region bubble-sort --source-file ../../src/FunCoding.LearnCSharpAlgorithms/Sorting/BubbleSorter.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
+
+```
+
+Here is the bubble sort algorithm to sort the array by descending:
+
+``` cs --region bubble-sort-descending --source-file ../../src/FunCoding.LearnCSharpAlgorithms/Sorting/BubbleSorter.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
 
 ```
 
@@ -61,10 +71,5 @@ We can see that the steps grows by approximately N<sup>2</sup>. So we would say 
 
 As we said before, actually O(N<sup>2</sup>) is not an efficient algorithm because when N grows, the time-consuming increases rapidly. Whenever we got a slow algorithm, it is worth to spending time to think about if we can find a better solution. Especially when we are dealing with some huge data, the slow algorithm is unacceptable.
 
-Here is the bubble sort algorithm to sort the array by descending:
-
-``` cs --region bubble-sort-descending --source-file ../../src/FunCoding.LearnCSharpAlgorithms/Sorting/BubbleSorter.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
-
-```
 
 [Return to README](../../README.md)
