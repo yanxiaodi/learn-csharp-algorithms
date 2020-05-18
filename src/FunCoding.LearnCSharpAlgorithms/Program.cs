@@ -41,6 +41,8 @@ namespace FunCoding.LearnCSharpAlgorithms
                 "selection-sort-descending" => new SelectionSorter().CallSelectionSortDescending(),
                 "insertion-sort" => new InsertionSorter().CallInsertionSort(),
                 "insertion-sort-descending" => new InsertionSorter().CallInsertionSortDescending(),
+                "quick-sort-lomuto-partition" => new QuickSorter().CallQuickSortWithLomutoPartition(),
+                "quick-sort-hoare-partition" => new QuickSorter().CallQuickSortWithHoarePartition(),
                 _ => MissingTag(region),
             };
 

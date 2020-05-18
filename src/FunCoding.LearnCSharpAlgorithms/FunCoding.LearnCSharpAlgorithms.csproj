@@ -17,4 +17,9 @@
     <PackageReference Include="System.CommandLine.Experimental" Version="0.3.0-alpha.19317.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataStructures\Lists\" />
+    <Folder Include="DataStructures\HashTables\" />
+  </ItemGroup>
+
 </Project>

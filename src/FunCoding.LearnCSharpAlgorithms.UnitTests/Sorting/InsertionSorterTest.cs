@@ -12,18 +12,22 @@ namespace FunCoding.LearnCSharpAlgorithms.UnitTests.Sorting
         [Fact]
         public static void DoTest()
         {
-            Random random = new Random(DateTime.Now.Millisecond);
-            int[] numbers = new int[1000];
-            int[] numbersForTest = new int[1000];
-            for (int i = 0; i < 1000; i++)
+            for (int count = 0; count < 1000; count++)
             {
-                numbers[i] = numbersForTest[i] = random.Next(0, 1000);
-            }
-            new InsertionSorter().InsertionSort(numbers);
-            Assert.True(numbers.SequenceEqual(numbersForTest.OrderBy(x => x).ToArray()));
+                Random random = new Random(DateTime.Now.Millisecond);
+                int[] numbers = new int[1000];
+                int[] numbersForTest = new int[1000];
+                for (int i = 0; i < 1000; i++)
+                {
+                    numbers[i] = numbersForTest[i] = random.Next(0, 1000);
+                }
 
-            new InsertionSorter().InsertionSortDescending(numbers);
-            Assert.True(numbers.SequenceEqual(numbersForTest.OrderByDescending(x => x).ToArray()));
+                new InsertionSorter().InsertionSort(numbers);
+                Assert.True(numbers.SequenceEqual(numbersForTest.OrderBy(x => x).ToArray()));
+
+                new InsertionSorter().InsertionSortDescending(numbers);
+                Assert.True(numbers.SequenceEqual(numbersForTest.OrderByDescending(x => x).ToArray()));
+            }
         }
     }
 }
