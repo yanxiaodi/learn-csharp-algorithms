@@ -4,7 +4,7 @@
 
 The steps of Selection Sort are shown as below:
 
-1. Check each item from lefe to right to find out which one is least. Keep a variable to track its index. If we encounter a item that is less than the one in the index variable(its value), we replace the index variable to make sure it points to the new index.
+1. Check each item from left to right to find out which one is least. Keep a variable to track its index. If we encounter a item that is less than the one in the index variable(its value), we replace the index variable to make sure it points to the new index.
 2. Once we complete the passthrough, we swap the index with the value we began the passthrough with.
 3. Repeat steps 1 and 2 until all the items are sorted.
 
