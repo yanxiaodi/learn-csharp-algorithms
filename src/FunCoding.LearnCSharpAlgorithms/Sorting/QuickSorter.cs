@@ -49,11 +49,15 @@ namespace FunCoding.LearnCSharpAlgorithms.Sorting
             {
                 if (list[j] < pivot)
                 {
-                    Swap(ref list[i], ref list[j]);
+                    var temp = list[i];
+                    list[i] = list[j];
+                    list[j] = temp;
                     i += 1;
                 }
             }
-            Swap(ref list[i], ref list[pivotIndex]);
+            var temp2 = list[i];
+            list[i] = list[pivotIndex];
+            list[pivotIndex] = temp2;
             return i;
         }
 
@@ -108,24 +112,20 @@ namespace FunCoding.LearnCSharpAlgorithms.Sorting
 
                 if (i >= j)
                 {
-                    Swap(ref list[i], ref list[rightIndex]);
+                    var temp = list[i];
+                    list[i] = list[rightIndex];
+                    list[rightIndex] = temp;
                     return i;
                 }
-                Swap(ref list[i], ref list[j]);
+                var temp2 = list[i];
+                list[i] = list[j];
+                list[j] = temp2;
                 i++;
                 j--;
             }
         }
 
         #endregion
-
-
-        private static void Swap(ref int x, ref int y)
-        {
-            int temp = x;
-            x = y;
-            y = temp;
-        }
 
     }
 }
