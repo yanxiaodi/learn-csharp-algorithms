@@ -22,7 +22,11 @@ Prerequisite: Install [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/
 * [What is Big O Notation](./docs/warmup/big-o-notation.md)
 * [Fibonacci Number](docs/warmup/fibonacci-number.md)
 * [Greatest Common Divisor](docs/warmup/greatest-common-divisors.md)
+
+### Union Find
+
 * [Union Find](docs/union-find/union-find.md)
+* [Quick Union Improvements](docs/union-find/quick-union-improvements.md)
 
 ### Sorting
 

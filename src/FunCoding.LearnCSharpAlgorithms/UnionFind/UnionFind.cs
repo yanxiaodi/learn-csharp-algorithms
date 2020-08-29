@@ -3,6 +3,9 @@
     public abstract class UnionFind
     {
         protected int[] Id;
+        /// <summary>
+        /// The number of components
+        /// </summary>
         protected int count;
 
         /// <summary>

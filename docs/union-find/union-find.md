@@ -91,7 +91,7 @@ You can run the code below:
 ```
 ## Quick Union
 
-We will use the same `id[]` array to represent the data but we use another way to implement `Find` and `Union` actions. In this way, each item in the array is going to contain a reference to its parent - that means `id[i]` is the parent of `i`. If two items have the same root, we can say they are connected.
+We will use the same `id[]` array to represent the data but we use another way to implement `Find` and `Union` actions. In this way, each item in the array is going to contain a reference to its parent - that means `id[i]` is the parent of `i`. If two items have the same root, we can say they are connected. The shape looks like a tree:
 
 ![img](assets/quick-union-overview.png)
 

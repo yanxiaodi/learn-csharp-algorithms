@@ -46,6 +46,8 @@ namespace FunCoding.LearnCSharpAlgorithms
                 "quick-sort-hoare-partition" => new QuickSorter().CallQuickSortWithHoarePartition(),
                 "quick-find" => new UnitFindClient().QuickFindTest(),
                 "quick-union" => new UnitFindClient().QuickUnionTest(),
+                "weighted-quick-union" => new UnitFindClient().WeightedQuickUnionTest(),
+                "weighted-quick-union-path-compression" => new UnitFindClient().WeightedQuickUnionPathCompressionTest(),
                 _ => MissingTag(region),
             };
 
