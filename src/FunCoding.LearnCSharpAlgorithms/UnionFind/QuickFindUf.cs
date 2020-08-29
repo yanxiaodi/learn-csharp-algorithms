@@ -2,6 +2,8 @@
 
 namespace FunCoding.LearnCSharpAlgorithms.UnionFind
 {
+    #region quick-find
+
     /// <summary>
     /// Java version: https://algs4.cs.princeton.edu/15uf/QuickFindUF.java.html
     /// </summary>
@@ -65,5 +67,7 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind
                 throw new ArgumentOutOfRangeException(nameof(p), $"Index {p} should be between 0 and {n}");
             }
         }
+        #endregion
+
     }
 }

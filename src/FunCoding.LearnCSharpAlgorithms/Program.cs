@@ -3,6 +3,7 @@
 
 using System;
 using FunCoding.LearnCSharpAlgorithms.Sorting;
+using FunCoding.LearnCSharpAlgorithms.UnionFind;
 using FunCoding.LearnCSharpAlgorithms.Warmup;
 
 namespace FunCoding.LearnCSharpAlgorithms
@@ -43,6 +44,8 @@ namespace FunCoding.LearnCSharpAlgorithms
                 "insertion-sort-descending" => new InsertionSorter().CallInsertionSortDescending(),
                 "quick-sort-lomuto-partition" => new QuickSorter().CallQuickSortWithLomutoPartition(),
                 "quick-sort-hoare-partition" => new QuickSorter().CallQuickSortWithHoarePartition(),
+                "quick-find" => new UnitFindClient().QuickFindTest(),
+                "quick-union" => new UnitFindClient().QuickUnionTest(),
                 _ => MissingTag(region),
             };
 

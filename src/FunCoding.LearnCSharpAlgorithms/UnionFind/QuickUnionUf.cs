@@ -2,6 +2,8 @@
 
 namespace FunCoding.LearnCSharpAlgorithms.UnionFind
 {
+    #region quick-union
+
     /// <summary>
     /// Java version: https://algs4.cs.princeton.edu/15uf/QuickUnionUF.java.html
     /// </summary>
@@ -60,4 +62,6 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind
             }
         }
     }
+    #endregion
+
 }
