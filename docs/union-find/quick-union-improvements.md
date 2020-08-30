@@ -59,3 +59,5 @@ You can run the test code:
 ```
 
 With this improvement, the algorithm is very close to linear time algorithm. That means we can use it to solve huge problems. For example, if we have 10<sup>9</sup> unions and finds with 10<sup>9</sup> objects, it might take 30 years if we use `Quick Find`. A faster computer would not help much. But `Weighted Quick Union with Path Compression` can reduce time from 30 years to 6 seconds! That the magic of the algorithm.
+
+[Return to README](../../README.md)
