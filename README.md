@@ -4,7 +4,7 @@ This is an interactive project to help beginners learn basic algorithms by C#.
 
 ## Setup
 
-You can explore these tutorials in your environment using the dotnet try global tool:
+You can explore these tutorials in your environment using the **dotnet try** global tool:
 
 Prerequisite: Install [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core)
 

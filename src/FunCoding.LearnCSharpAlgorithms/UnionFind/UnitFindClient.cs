@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace FunCoding.LearnCSharpAlgorithms.UnionFind
@@ -9,31 +10,25 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind
         #region quick-find
         public int QuickFindTest()
         {
-            int n = 10;
-            var input = new List<Tuple<int, int>>
-            {
-                new Tuple<int, int>(4, 3),
-                new Tuple<int, int>(3, 8),
-                new Tuple<int, int>(6, 5),
-                new Tuple<int, int>(9, 4),
-                new Tuple<int, int>(2, 1),
-                new Tuple<int, int>(8, 9),
-                new Tuple<int, int>(5, 0),
-                new Tuple<int, int>(7, 2),
-                new Tuple<int, int>(6, 1),
-                new Tuple<int, int>(1, 0),
-                new Tuple<int, int>(6, 7)
-            };
+            // You can change the value of n to check the performance
+            int n = 10000;
+            Random randomSeed = new Random(System.DateTime.Now.Millisecond);
+            // Create a Stopwatch to record the time.
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
             var uf = new QuickFindUf(n);
-            foreach (var tuple in input)
+            for (int i = 0; i < n * 4 / 5; i++)
             {
-                if (!uf.Connected(tuple.Item1, tuple.Item2))
+                var p = randomSeed.Next(0, n);
+                var q = randomSeed.Next(0, n);
+                if (!uf.Connected(p, q))
                 {
-                    uf.Union(tuple.Item1, tuple.Item2);
-                    Console.WriteLine($"{tuple.Item1} {tuple.Item2}");
+                    uf.Union(p, q);
                 }
             }
+            sw.Stop();
             Console.WriteLine($"{uf.Count()} components");
+            Console.WriteLine($"It runs {sw.ElapsedMilliseconds} milliseconds");
             return 0;
         }
         #endregion
@@ -42,31 +37,25 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind
 
         public int QuickUnionTest()
         {
-            int n = 10;
-            var input = new List<Tuple<int, int>>
-            {
-                new Tuple<int, int>(4, 3),
-                new Tuple<int, int>(3, 8),
-                new Tuple<int, int>(6, 5),
-                new Tuple<int, int>(9, 4),
-                new Tuple<int, int>(2, 1),
-                new Tuple<int, int>(8, 9),
-                new Tuple<int, int>(5, 0),
-                new Tuple<int, int>(7, 2),
-                new Tuple<int, int>(6, 1),
-                new Tuple<int, int>(1, 0),
-                new Tuple<int, int>(6, 7)
-            };
+            // You can change the value of n to check the performance
+            int n = 10000;
+            Random randomSeed = new Random(System.DateTime.Now.Millisecond);
+            // Create a Stopwatch to record the time.
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
             var uf = new QuickUnionUf(n);
-            foreach (var tuple in input)
+            for (int i = 0; i < n * 4 / 5; i++)
             {
-                if (!uf.Connected(tuple.Item1, tuple.Item2))
+                var p = randomSeed.Next(0, n);
+                var q = randomSeed.Next(0, n);
+                if (!uf.Connected(p, q))
                 {
-                    uf.Union(tuple.Item1, tuple.Item2);
-                    Console.WriteLine($"{tuple.Item1} {tuple.Item2}");
+                    uf.Union(p, q);
                 }
             }
+            sw.Stop();
             Console.WriteLine($"{uf.Count()} components");
+            Console.WriteLine($"It runs {sw.ElapsedMilliseconds} milliseconds");
             return 0;
         }
 
@@ -76,31 +65,25 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind
 
         public int WeightedQuickUnionTest()
         {
-            int n = 10;
-            var input = new List<Tuple<int, int>>
-            {
-                new Tuple<int, int>(4, 3),
-                new Tuple<int, int>(3, 8),
-                new Tuple<int, int>(6, 5),
-                new Tuple<int, int>(9, 4),
-                new Tuple<int, int>(2, 1),
-                new Tuple<int, int>(8, 9),
-                new Tuple<int, int>(5, 0),
-                new Tuple<int, int>(7, 2),
-                new Tuple<int, int>(6, 1),
-                new Tuple<int, int>(1, 0),
-                new Tuple<int, int>(6, 7)
-            };
+            // You can change the value of n to check the performance
+            int n = 1000000;
+            Random randomSeed = new Random(System.DateTime.Now.Millisecond);
+            // Create a Stopwatch to record the time.
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
             var uf = new WeightedQuickUnionUf(n);
-            foreach (var tuple in input)
+            for (int i = 0; i < n * 4 / 5; i++)
             {
-                if (!uf.Connected(tuple.Item1, tuple.Item2))
+                var p = randomSeed.Next(0, n);
+                var q = randomSeed.Next(0, n);
+                if (!uf.Connected(p, q))
                 {
-                    uf.Union(tuple.Item1, tuple.Item2);
-                    Console.WriteLine($"{tuple.Item1} {tuple.Item2}");
+                    uf.Union(p, q);
                 }
             }
+            sw.Stop();
             Console.WriteLine($"{uf.Count()} components");
+            Console.WriteLine($"It runs {sw.ElapsedMilliseconds} milliseconds");
             return 0;
         }
 
@@ -110,31 +93,25 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind
 
         public int WeightedQuickUnionPathCompressionTest()
         {
-            int n = 10;
-            var input = new List<Tuple<int, int>>
-            {
-                new Tuple<int, int>(4, 3),
-                new Tuple<int, int>(3, 8),
-                new Tuple<int, int>(6, 5),
-                new Tuple<int, int>(9, 4),
-                new Tuple<int, int>(2, 1),
-                new Tuple<int, int>(8, 9),
-                new Tuple<int, int>(5, 0),
-                new Tuple<int, int>(7, 2),
-                new Tuple<int, int>(6, 1),
-                new Tuple<int, int>(1, 0),
-                new Tuple<int, int>(6, 7)
-            };
+            // You can change the value of n to check the performance
+            int n = 1000000;
+            Random randomSeed = new Random(System.DateTime.Now.Millisecond);
+            // Create a Stopwatch to record the time.
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
             var uf = new WeightedQuickUnionWithPathCompressionUf(n);
-            foreach (var tuple in input)
+            for (int i = 0; i < n * 4 / 5; i++)
             {
-                if (!uf.Connected(tuple.Item1, tuple.Item2))
+                var p = randomSeed.Next(0, n);
+                var q = randomSeed.Next(0, n);
+                if (!uf.Connected(p, q))
                 {
-                    uf.Union(tuple.Item1, tuple.Item2);
-                    Console.WriteLine($"{tuple.Item1} {tuple.Item2}");
+                    uf.Union(p, q);
                 }
             }
+            sw.Stop();
             Console.WriteLine($"{uf.Count()} components");
+            Console.WriteLine($"It runs {sw.ElapsedMilliseconds} milliseconds");
             return 0;
         }
 
