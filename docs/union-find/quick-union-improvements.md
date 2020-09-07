@@ -34,11 +34,11 @@ You can run the test code:
 
 Let us have a comparation:
 
-| algorithm            | initialize | union  | find |
-| -------------------- | ---------- | ------ | ---- |
-| Quick Find           | N          | N      | 1    |
-| Quick Union          | N          | N+     | N    |
-| Weighted Quick Union | N          | logN + | logN |
+| algorithm            | initialize | union         | find |
+| -------------------- | ---------- | ------------- | ---- |
+| Quick Find           | N          | N<sup>2</sup> | 1    |
+| Quick Union          | N          | N+            | N    |
+| Weighted Quick Union | N          | logN +        | logN |
 
 (N+ means it includes cost of finding roots)
 

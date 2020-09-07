@@ -18,29 +18,23 @@ Let us talk about the union find problem. You can find the description of this p
 
 ![Dynamic connectivity example](assets/dynamic-connectivity-tiny.png)
 
-We will create an abstract class as shown below to represent the basic functionalities of it:
+We will create an interface as shown below to represent the basic functionalities of it:
 
 ```csharp
-    public abstract class UnionFind
+    public interface IUnionFind
     {
-        protected int[] Id;
-        protected int count;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnionFind"/> class with n objects (0 to n -1).
-        /// </summary>
-        /// <param name="n">The n.</param>
-        protected UnionFind(int n)
-        {
-            Id = new int[n];
-        }
+        //protected int[] Id;
+        ///// <summary>
+        ///// The number of components
+        ///// </summary>
+        //protected int count;
 
         /// <summary>
         /// Add connection between p and q
         /// </summary>
         /// <param name="p">The p.</param>
         /// <param name="q">The q.</param>
-        public abstract void Union(int p, int q);
+        public void Union(int p, int q);
 
         /// <summary>
         /// Are p and q in the same component?
@@ -48,22 +42,21 @@ We will create an abstract class as shown below to represent the basic functiona
         /// <param name="p">The p.</param>
         /// <param name="q">The q.</param>
         /// <returns></returns>
-        public abstract bool Connected(int p, int q);
+        public bool Connected(int p, int q);
 
         /// <summary>
         /// Component identifier for p (0 to n - 1)
         /// </summary>
         /// <param name="p">The p.</param>
         /// <returns></returns>
-        public abstract int Find(int p);
+        public int Find(int p);
 
         /// <summary>
         /// Number of components
         /// </summary>
         /// <returns></returns>
-        public abstract int Count();
+        public int Count();
     }
-
 ```
 
 Keep in mind that the `n` could be huge. 
@@ -113,10 +106,10 @@ You can run the test code:
 
 Let us have a comparation:
 
-| algorithm   | initialize | union | find |
-| ----------- | ---------- | ----- | ---- |
-| Quick Find  | N          | N     | 1    |
-| Quick Union | N          | N+    | N    |
+| algorithm   | initialize | union         | find |
+| ----------- | ---------- | ------------- | ---- |
+| Quick Find  | N          | N<sup>2</sup> | 1    |
+| Quick Union | N          | N+            | N    |
 
 (N+ means it includes cost of finding roots)
 

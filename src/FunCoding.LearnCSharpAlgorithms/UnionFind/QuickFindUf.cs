@@ -7,61 +7,67 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind
     /// <summary>
     /// Java version: https://algs4.cs.princeton.edu/15uf/QuickFindUF.java.html
     /// </summary>
-    /// <seealso cref="FunCoding.LearnCSharpAlgorithms.UnionFind.UnionFind" />
-    public class QuickFindUf : UnionFind
+    /// <seealso cref="FunCoding.LearnCSharpAlgorithms.UnionFind.IUnionFind" />
+    public class QuickFindUf : IUnionFind
     {
-        public QuickFindUf(int n) : base(n)
+        private readonly int[] _id;
+        /// <summary>
+        /// The number of components
+        /// </summary>
+        private int _count;
+        public QuickFindUf(int n)
         {
+            _id = new int[n];
             // Set id of each object to itself. N array accesses
             for (int i = 0; i < n; i++)
             {
-                Id[i] = i;
+                _id[i] = i;
             }
 
-            count = n;
+            _count = n;
         }
 
-        public override void Union(int p, int q)
+        public void Union(int p, int q)
         {
             Validate(p);
             Validate(q);
-            int pid = Id[p];
-            int qid = Id[q];
+            int pid = _id[p];
+            int qid = _id[q];
             //Change all entries with id[p] to id[q] (at most 2N+2 array accesses)
-            for (int i = 0; i < Id.Length; i++)
+            for (int i = 0; i < _id.Length; i++)
             {
-                if (Id[i] == pid)
+                if (_id[i] == pid)
                 {
-                    Id[i] = qid;
+                    _id[i] = qid;
                 }
             }
 
-            count--;
+            _count--;
         }
 
-        public override bool Connected(int p, int q)
+        public bool Connected(int p, int q)
         {
             Validate(p);
             Validate(q);
             //Check whether p and q are in the same component. 2 array accesses.
-            return Id[p] == Id[q];
+            return _id[p] == _id[q];
         }
 
-        public override int Find(int p)
+        public int Find(int p)
         {
             Validate(p);
             // 1 array access.
-            return Id[p];
+            return _id[p];
         }
 
-        public override int Count()
+        public int Count()
         {
-            return count;
+            return _count;
         }
 
         private void Validate(int p)
         {
-            var n = Id.Length;
+            var n = _id.Length;
             if (p < 0 || p >= n)
             {
                 throw new ArgumentOutOfRangeException(nameof(p), $"Index {p} should be between 0 and {n}");

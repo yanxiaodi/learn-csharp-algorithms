@@ -3,26 +3,32 @@
 namespace FunCoding.LearnCSharpAlgorithms.UnionFind
 {
     #region weighted-quick-union-path-compression    
-    public class WeightedQuickUnionWithPathCompressionUf : UnionFind
+    public class WeightedQuickUnionWithPathCompressionUf : IUnionFind
     {
+        private readonly int[] _id;
+        /// <summary>
+        /// The number of components
+        /// </summary>
+        private int _count;
         /// <summary>
         /// size[i] = number of elements in subtree rooted at i
         /// </summary>
-        private int[] size;
-        public WeightedQuickUnionWithPathCompressionUf(int n) : base(n)
+        private readonly int[] _size;
+        public WeightedQuickUnionWithPathCompressionUf(int n)
         {
-            size = new int[n];
+            _id = new int[n];
+            _size = new int[n];
             // Set id of each object to itself (N array accesses)
             for (int i = 0; i < n; i++)
             {
-                Id[i] = i;
-                size[i] = 1;
+                _id[i] = i;
+                _size[i] = 1;
             }
 
-            count = n;
+            _count = n;
         }
 
-        public override void Union(int p, int q)
+        public void Union(int p, int q)
         {
             var rootP = Find(p);
             var rootQ = Find(q);
@@ -31,48 +37,48 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind
                 return;
             }
             // Make smaller tree point to larger one.
-            if (size[rootP] < size[rootQ])
+            if (_size[rootP] < _size[rootQ])
             {
-                Id[rootP] = rootQ;
-                size[rootQ] += size[rootP];
+                _id[rootP] = rootQ;
+                _size[rootQ] += _size[rootP];
             }
             else
             {
-                Id[rootQ] = rootP;
-                size[rootP] += size[rootQ];
+                _id[rootQ] = rootP;
+                _size[rootP] += _size[rootQ];
             }
 
-            count--;
+            _count--;
         }
 
-        public override bool Connected(int p, int q)
+        public bool Connected(int p, int q)
         {
             // Check if p and q have the same root (depth of p and q array accesses)
             return Find(p) == Find(q);
         }
 
-        public override int Find(int p)
+        public int Find(int p)
         {
             Validate(p);
             // Chase parent pointers until reach root (depth of i array accesses)
-            while (p != Id[p])
+            while (p != _id[p])
             {
                 // Flatten the tree!
-                Id[p] = Id[Id[p]];
-                p = Id[p];
+                _id[p] = _id[_id[p]];
+                p = _id[p];
             }
 
             return p;
         }
 
-        public override int Count()
+        public int Count()
         {
-            return count;
+            return _count;
         }
 
         private void Validate(int p)
         {
-            var n = Id.Length;
+            var n = _id.Length;
             if (p < 0 || p >= n)
             {
                 throw new ArgumentOutOfRangeException(nameof(p), $"Index {p} should be between 0 and {n}");
