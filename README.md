@@ -27,6 +27,7 @@ Prerequisite: Install [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/
 
 * [Union Find](docs/union-find/union-find.md)
 * [Quick Union Improvements](docs/union-find/quick-union-improvements.md)
+* [Quick Union Application - Percolation](docs/union-find/union-find-application.md)
 
 ### Sorting
 

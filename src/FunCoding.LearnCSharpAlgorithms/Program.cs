@@ -4,6 +4,7 @@
 using System;
 using FunCoding.LearnCSharpAlgorithms.Sorting;
 using FunCoding.LearnCSharpAlgorithms.UnionFind;
+using FunCoding.LearnCSharpAlgorithms.UnionFind.Percolation;
 using FunCoding.LearnCSharpAlgorithms.Warmup;
 
 namespace FunCoding.LearnCSharpAlgorithms
@@ -48,6 +49,8 @@ namespace FunCoding.LearnCSharpAlgorithms
                 "quick-union" => new UnitFindClient().QuickUnionTest(),
                 "weighted-quick-union" => new UnitFindClient().WeightedQuickUnionTest(),
                 "weighted-quick-union-path-compression" => new UnitFindClient().WeightedQuickUnionPathCompressionTest(),
+                "percolation" => new PercolationClient().PercolationTest(),
+
                 _ => MissingTag(region),
             };
 
