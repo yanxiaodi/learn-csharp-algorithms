@@ -10,6 +10,7 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind.Percolation
         private readonly int _virtualTop;
         private readonly int _virtualBottom;
         private readonly WeightedQuickUnionUf _wquGrid;
+        private readonly WeightedQuickUnionUf _wquGridFull;
 
         public Percolation(int size)
         {
@@ -18,6 +19,7 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind.Percolation
             _openSites = 0;
             var count = size * size;
             _wquGrid = new WeightedQuickUnionUf(count + 2);
+            _wquGridFull = new WeightedQuickUnionUf(count + 1);
             _virtualTop = count;
             _virtualBottom = count + 1;
         }
@@ -36,6 +38,7 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind.Percolation
             if (row == 1)
             {
                 _wquGrid.Union(_virtualTop, index);
+                _wquGridFull.Union(_virtualTop, index);
             }
             else if (row == _gridSize)
             {
@@ -46,21 +49,25 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind.Percolation
             if (IsInGrid(row -1, col) && IsOpen(row -1, col))
             {
                 _wquGrid.Union(index, index - _gridSize);
+                _wquGridFull.Union(index, index - _gridSize);
             }
             // Check down site
             if (IsInGrid(row + 1, col) && IsOpen(row + 1, col))
             {
                 _wquGrid.Union(index, index + _gridSize);
+                _wquGridFull.Union(index, index + _gridSize);
             }
             // Check left site
             if (IsInGrid(row, col - 1) && IsOpen(row, col - 1))
             {
                 _wquGrid.Union(index, index - 1);
+                _wquGridFull.Union(index, index - 1);
             }
             // Check right site
             if (IsInGrid(row, col + 1) && IsOpen(row, col + 1))
             {
                 _wquGrid.Union(index, index + 1);
+                _wquGridFull.Union(index, index + 1);
             }
         }
 
@@ -72,7 +79,7 @@ namespace FunCoding.LearnCSharpAlgorithms.UnionFind.Percolation
 
         public bool IsFull(int row, int col)
         {
-            throw new NotImplementedException();
+            return _wquGridFull.Find(_virtualTop) == _wquGridFull.Find(FindIndex(row, col));
         }
 
         public int NumberOfOpenSites()

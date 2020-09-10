@@ -1,4 +1,4 @@
-# Union-Find Applications
+# Union-Find Application - Percolation
 
 There are huge number of problems that can be solved by **Union-Find** algorithm. Let us look at one question called **percolation**. You can find it here: [Case Study: Percolation](https://introcs.cs.princeton.edu/java/24percolation/).
 
@@ -39,7 +39,7 @@ In the implementation, we need to create a grid that contains n*n sites. By defa
 
 We can check whether any site in the top row is connected to any site in the bottom row. But the problem is this way is too expensive. Because for each site in the top row, we need to check each site in the bottom row so it is quadratic algorithm. This way is too slow for big problems.
 
-Instead, we can create a virtual site on the top and on the bottom. So the problem is easier with these two virtual sites - we just need to check if the virtual top site is connected to the virtual bottom site. If we open a site that is in the first row, we need to connect it with the virtual top site. The same method can be applied to the sites that are in the bottom row. 
+Instead, we can create a virtual site on the top and on the bottom. So the problem is easier to be solved with these two virtual sites - we just need to check if the virtual top site is connected to the virtual bottom site. If we open a site that is in the first row, we need to connect it with the virtual top site. The same method can be applied to the sites that are in the bottom row. 
 
 ## Implementation
 
@@ -154,3 +154,39 @@ Then you can try to run the below code. You can change the size of the grid and 
 ``` cs --region percolation --source-file ../../src/FunCoding.LearnCSharpAlgorithms/UnionFind/Percolation/PercolationClient.cs --project ../../src/FunCoding.LearnCSharpAlgorithms/FunCoding.LearnCSharpAlgorithms.csproj
 
 ```
+
+## Backwash
+
+For now, it seems we already solved the problem. But you may notice that we have not implemented `IsFull()` method. So how do we do that?
+
+To check if a site is full, please read this sentence:
+
+> A *full* site is an open site that can be connected to an open site in the top row via a chain of neighboring (left, right, up, down) open sites. 
+
+When I first time tried to do this question, I thought it should be very easy. Just check if the site is connected to any site that is in the top row. So I wrote the below code:
+
+```csharp
+public bool IsFull(int row, int col)
+{
+    return _wquGrid.Find(_virtualTop) == _wquGrid.Find(FindIndex(row, col));
+}
+```
+
+Do you think it is feasible?
+
+Unfortunately, it is wrong. Consider the below example:
+
+Let us say we have a 3*3 grid. The 3 sites on the right have been opened (X - close; O - open):
+
+| X    | X    | O    |
+| ---- | ---- | ---- |
+| X    | X    | O    |
+| X    | X    | O    |
+
+So the grid percolates already. The question is if we open the site (3, 1) - the left bottom site, is it full?
+
+Obviously, it is not full because it is not connected with any site that is in the top row. But with my previous implementation, `IsFull(3, 1)` returns `True`. Why?
+
+The problem is we created two virtual sites - top and bottom. When we open the left bottom site, it will be connected to the virtual bottom site, which can be connected to the virtual top site through the sites in the third column. It is called **backwash** issue.
+
+I made some changes to the original implementation to solve it. You can check the source code of `Percolation.cs`. But to be honest, my implementation is not the best solution. If you have better idea, please feel free to create a pull request. Thanks.
